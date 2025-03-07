@@ -1,3 +1,8 @@
+//REFERÊNCIAS DA COTAÇÃO DE MOEDAS NO DIA
+const USD = 5.79;
+const EUR = 6.28;
+const GBP = 7.48;
+
 // Obtendo os elementos do Formulario.
 const amount = document.getElementById("amount");
 const currency = document.getElementById("currency");
@@ -14,5 +19,21 @@ amount.addEventListener("input", () => {
 // Captando o evento do submit (enviar) do formulário.
 form.onsubmit = (event) => {
   event.preventDefault();
-  console.log(currency.value); // retorna o valor do select currency.
+
+  switch (currency.value) {
+    case "USD":
+      convertCurrency(amount.value, USD, "US$");
+      break;
+    case "EUR":
+      convertCurrency(amount.value, EUR, "€");
+      break;
+    case "GBP":
+      convertCurrency(amount.value, GBP, "£");
+      break;
+  }
+}
+
+// FUNÇÃO PARA CONVERTER A MOEDA.
+function convertCurrency(amount, price, symbol){
+  
 }
