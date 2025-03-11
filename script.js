@@ -48,6 +48,11 @@ function convertCurrency(amount, price, symbol){
     // Calcula o total da conversão.
     let total = amount * price;
 
+    // Verifica se o total não é um número.
+    if(isNaN(total)){
+      return alert("Valor inválido. Tente novamente.");
+    }
+
     // Exibe o resultado total da conversão.
     result.textContent = formatCurrencyBRL(total);
 
